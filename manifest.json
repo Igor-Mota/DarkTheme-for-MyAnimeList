@@ -1,0 +1,19 @@
+{ 
+    "name":"Mao-Extesion",
+    "version":"1.0",
+    "description":"add theme dark in Mao",
+    "permissions": ["declarativeContent","storage","activeTab"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+      "browser_action":{
+        "default_popup":"popup.html"
+      },
+      "content_scripts":[{
+        "matches":["*://myanimelist.net/"],
+        "js":["popup.js"]
+        
+      }],
+      "manifest_version": 2
+}
