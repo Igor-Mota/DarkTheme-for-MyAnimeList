@@ -115,7 +115,6 @@ for( var i = 0; i < menuUls.length; i++){
     }
     var lisMenu = ulMenuDropDown.querySelectorAll("li");
 
-    console.log(lisMenu)
   for(var i = 0; i < lisMenu.length; i++){
     lisMenu[i].querySelector("a").style.backgroundColor = "#242526";
   }
