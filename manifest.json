@@ -11,8 +11,8 @@
         "default_popup":"popup.html"
       },
       "content_scripts":[{
-        "matches":["*://myanimelist.net/"],
-        "js":["popup.js"]
+        "matches":["*://myanimelist.net/**"],
+        "js":["script.js"]
         
       }],
       "manifest_version": 2
