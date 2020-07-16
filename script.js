@@ -3,7 +3,7 @@ let PageStyles = document.createElement("style");
 let preto = "#242526";
 let pretoC ="#3a3b3c";
 
-PageStyles.innerHTML += `  body{background:${preto} !important}`;
+PageStyles.innerHTML += `  body{background-color:${preto} !important}`;
 PageStyles.innerHTML += ` .header-right i{color:${preto}}`;
 PageStyles.innerHTML += ` .header-profile{background:${pretoC} !important ;border-radius: 5px !important}`;
 PageStyles.innerHTML += ` .header-profile-link{color: #fff !important}`;
@@ -26,10 +26,14 @@ PageStyles.innerHTML += ` .non-link{color: #fff !important}`;
 PageStyles.innerHTML += `  #footer-block{background-color:${preto} !important}`;
 PageStyles.innerHTML += ` .wider{background-color:${preto} !important}`;
 PageStyles.innerHTML += `  #menu{background-color:${preto} !important ; border 1px solid #c4c4c4 !important; width:100% !important}`;
-PageStyles.innerHTML += `  #myanimelist{width:98% !important}`;
 PageStyles.innerHTML += `  #widget-episode-video{width:100% !important}`;
 PageStyles.innerHTML += `  h2{color:#fff !important}`;
+PageStyles.innerHTML += ` .header-notification-view-all a{background-color: ${preto} !important} `;
+PageStyles.innerHTML += ` .header-notification-dropdown-inner h3{background-color: ${preto} !important} `;
+PageStyles.innerHTML += ` .header-notification-item-list li {background-color: ${preto} !important}`
+PageStyles.innerHTML += `  #myanimelist{width:98% !important}`;
 
+//pages sem width alargada  === https://myanimelist.net/manga.php   https://myanimelist.net/anime/season
 
 document.head.appendChild(PageStyles);
 
@@ -43,14 +47,33 @@ try{
     }
     nav = nav.querySelectorAll("ul");
     for(var i = 0; i < nav.length; i++){
-        nav[i].style.borderRadius = "15px"
+       
         var temp = nav[i].querySelectorAll("li");
+        temp[0].style.borderRadius = "15px"
         for(var c = 0; c < temp.length; c++ ){
             temp[c].querySelector("a").style.backgroundColor = preto;
             temp[c].querySelector("a").addEventListener("mousemove", brilho);
             temp[c].querySelector("a").addEventListener("mouseout", brilhoFora);
-     
         }    
+    }
+
+    let headerProfileDropDown = document.querySelector(".header-profile-dropdown");
+    headerProfileDropDown =  headerProfileDropDown.querySelector("ul");
+    headerProfileDropDown = headerProfileDropDown.querySelectorAll("li");
+
+    for(var i = 0; i < headerProfileDropDown.length; i++){
+        headerProfileDropDown[i].querySelector("a").style.backgroundColor = preto;
+        headerProfileDropDown[i].addEventListener("mousemove", brilho);
+        headerProfileDropDown[i].addEventListener("mouseout", brilhoFora);
+    }
+    let headerListDropDown = document.querySelector(".header-list-dropdown");
+    headerListDropDown =  headerListDropDown.querySelector("ul");
+    headerListDropDown = headerListDropDown.querySelectorAll("li");
+
+    for(var i = 0; i < headerListDropDown.length; i++){
+        headerListDropDown[i].querySelector("a").style.backgroundColor = preto;
+        headerListDropDown[i].addEventListener("mousemove", brilho);
+        headerListDropDown[i].addEventListener("mouseout", brilhoFora);
     }
 }catch(e){}
 
