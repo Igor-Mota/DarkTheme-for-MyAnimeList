@@ -49,7 +49,6 @@ try{
             temp[c].querySelector("a").style.backgroundColor = preto;
             temp[c].querySelector("a").addEventListener("mousemove", brilho);
             temp[c].querySelector("a").addEventListener("mouseout", brilhoFora);
-     
         }    
     }
 }catch(e){}
