@@ -14,10 +14,13 @@
           "32": "./public/malico.png"
         }
       },
+      "icons":{
+        "16":"./public/malico.png",
+        "32":"./public/malico.png"
+      },
       "content_scripts":[{
         "matches":["*://myanimelist.net/**"],
-        "js":["script.js"]
-        
+        "js":["script.js"] 
       }],
       "manifest_version": 2
 }

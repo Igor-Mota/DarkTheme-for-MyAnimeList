@@ -13,8 +13,10 @@ PageStyles.innerHTML += `  #content{background-color:${preto} !important; border
 PageStyles.innerHTML += `  #contentWrapper{background-color:${preto} !important}`;
 PageStyles.innerHTML += `  h3{color:#fff !important}`;
 PageStyles.innerHTML += `  a{color:#fff !important}`;
+PageStyles.innerHTML+= `  .button_add{background-color:${preto} !important}`;
 PageStyles.innerHTML += `  a.header-right{color:${preto} !important}`;
 PageStyles.innerHTML += `  p{color:#fff !important}`;
+PageStyles.innerHTML += ` .footer-ranking{background-color:${preto} !important}`
 PageStyles.innerHTML += ` .text{color:#fff !important}`;
 PageStyles.innerHTML += ` .textReadability{color:#fff !important}`;
 PageStyles.innerHTML += ` .spaceit{color:#fff !important}`;
@@ -30,8 +32,20 @@ PageStyles.innerHTML += `  #widget-episode-video{width:100% !important}`;
 PageStyles.innerHTML += `  h2{color:#fff !important}`;
 PageStyles.innerHTML += ` .header-notification-view-all a{background-color: ${preto} !important} `;
 PageStyles.innerHTML += ` .header-notification-dropdown-inner h3{background-color: ${preto} !important} `;
-PageStyles.innerHTML += ` .header-notification-item-list li {background-color: ${preto} !important}`
+PageStyles.innerHTML += ` .header-notification-item-list li {background-color: ${preto} !important}`;
+PageStyles.innerHTML += `  #horiznav_nav{background-color:${preto} !important}`;
+PageStyles.innerHTML += `  td{background-color:${preto} !important}`;
+PageStyles.innerHTML += `  td.rank{border:1px solid #fff !important}`;
+PageStyles.innerHTML += `  td.title{border:1px solid #fff !important}`;
+PageStyles.innerHTML += `  td.score{border:1px solid #fff !important}`;
+PageStyles.innerHTML += `  td.your-score{border:1px solid #fff !important}`;
+PageStyles.innerHTML += `  td.status{border:1px solid #fff !important}`;
+PageStyles.innerHTML += `  #horiznav_nav ul li a{background-color:${preto} !important}`;
+PageStyles.innerHTML += ` .btn-category{background-color:${preto} !important}`;
+PageStyles.innerHTML += ` .Lightbox_AddEdit{border:none !important}`;
+PageStyles.innerHTML += ` .bgColor1{background-color:${preto} !important; color:#fff !important}`;
 PageStyles.innerHTML += `  #myanimelist{width:98% !important}`;
+
 
 //pages sem width alargada  === https://myanimelist.net/manga.php   https://myanimelist.net/anime/season
 
@@ -75,6 +89,13 @@ try{
         headerListDropDown[i].addEventListener("mousemove", brilho);
         headerListDropDown[i].addEventListener("mouseout", brilhoFora);
     }
+
+    let searchList =  document.querySelectorAll(".genre-list");
+    for(var i = 0; i < searchList.length; i++){
+        searchList[i].addEventListener("mousemove",brilho);
+        searchList[i].addEventListener("mouseout", brilhoFora);
+    }
+
 }catch(e){}
 
 function brilho(e){
