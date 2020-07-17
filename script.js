@@ -43,9 +43,16 @@ PageStyles.innerHTML += `  td.status{border:1px solid #fff !important}`;
 PageStyles.innerHTML += `  #horiznav_nav ul li a{background-color:${preto} !important}`;
 PageStyles.innerHTML += ` .btn-category{background-color:${preto} !important}`;
 PageStyles.innerHTML += ` .Lightbox_AddEdit{border:none !important}`;
+PageStyles.innerHTML += ` .navi-seasonal{background-color:${preto} !important}`;
+PageStyles.innerHTML += ` .prodsrc{background-color:${preto} !important}`;
+PageStyles.innerHTML += ` .genres{background-color:${preto} !important} `;
+PageStyles.innerHTML += `  span.genre a{color:${preto} !important}`;
+PageStyles.innerHTML += ` .synopsis{color:#fff !important} `;
+PageStyles.innerHTML += ` .btn-edit-tags{color:${preto} !important}`;
+PageStyles.innerHTML += ` .birthday{color:#fff !important}`;
+PageStyles.innerHTML += ` .favorites{color:#fff !important}`;  
 PageStyles.innerHTML += ` .bgColor1{background-color:${preto} !important; color:#fff !important}`;
-PageStyles.innerHTML += `  #myanimelist{width:98% !important}`;
-
+PageStyles.innerHTML += ` .btn-choose-your-own{color:${preto} !important}`;
 
 //pages sem width alargada  === https://myanimelist.net/manga.php   https://myanimelist.net/anime/season
 
@@ -96,8 +103,26 @@ try{
         searchList[i].addEventListener("mouseout", brilhoFora);
     }
 
-}catch(e){}
 
+    let AnimeSeassonNav = document.querySelector(".horiznav_nav");
+    AnimeSeassonNav = AnimeSeassonNav.querySelector("ul");
+    AnimeSeassonNav = AnimeSeassonNav.querySelectorAll("li");
+    
+    
+    for(var i = 0; i < AnimeSeassonNav.length; i++){
+        AnimeSeassonNav[i].querySelector("a").style.backgroundColor = preto;
+    }
+
+}catch(e){
+    console.log("error" + e);
+}
+
+let noWidth = "https://myanimelist.net/anime/season"; 
+let page = window.location.href;
+
+if(page != noWidth){
+   document.querySelector("#myanimelist").style.width = "98%";
+}
 function brilho(e){
     e.target.style.backgroundColor = pretoC;
  
@@ -105,4 +130,3 @@ function brilho(e){
 function brilhoFora(e){
     e.target.style.backgroundColor = preto;
 }
-
